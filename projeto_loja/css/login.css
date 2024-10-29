@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-image: url("../imagens/fundo2.jpg");
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+.login-container h2 {
+    margin-top: 0;
+}
+.login-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.login-container input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    margin-right: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.login-container button {
+    background: #218838;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+.login-container button:hover {
+    background: #29a744;
+}
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+.error-message {
+    background-color: #d11b1b;
+    color: #fff;
+    padding: 1rem;
+    border: 1px solid #ac1111;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+.campos {
+    padding-right: 15px;
+}

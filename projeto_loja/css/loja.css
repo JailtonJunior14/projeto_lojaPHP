@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    position: fixed; /* Fixa o cabeçalho na parte superior */
+    top: 0; /* Alinha o cabeçalho ao topo da página */
+    left: 0; /* Alinha o cabeçalho ao lado esquerdo da página */
+    width: 100%; /* O cabeçalho ocupa toda a largura da página */
+    height: 80px; /* Altura do cabeçalho */
+    background: #13245c;
+    color: #fff;
+    padding: 0 60px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    margin: 0;
+}
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+nav {
+    background: #3d5391;
+    color: #fff;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.cart-info {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+}
+.cart-info span {
+    margin-left: 0.5rem;
+}
+.cart-info span a {
+    color: white;
+    text-decoration: none;
+}
+main {
+    padding: 1rem;
+    background: #fff;
+    margin-top: 80px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.product {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.product img {
+    max-width: 100px;
+    margin-bottom: 1rem;
+}
+.product-details {
+    flex: 1;
+}
+.product-details h2 {
+    margin: 0 0 0.5rem;
+}
+.product-details p {
+    margin: 0 0 1rem;
+}
+.product-price {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+.add-to-cart {
+    background: #218838; /* #28a745; */
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.add-to-cart:hover {
+    background: #29a744;
+}
+.cart-icon {
+    height: 30px;
+    background-color: white;
+    padding: 3px;
+    border-radius: 4px;
+}
+.link-button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.user-name {
+    color: rgb(233, 233, 24);
+}

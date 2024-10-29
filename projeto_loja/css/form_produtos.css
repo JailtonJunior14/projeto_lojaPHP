@@ -1,0 +1,25 @@
+.product-form h2 {
+    margin-top: 0;
+}
+.product-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.product-form input, .product-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.product-form button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.product-form button:hover {
+    background: #218838;
+}
