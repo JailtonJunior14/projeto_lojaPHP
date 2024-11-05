@@ -2,7 +2,7 @@
 include 'protecao.php';
 include 'conexao.php';
 
-$usuario = $_SESSION['email'];
+$usuario = $_SESSION['nome'];
 
 // Definir o número de registros por página
 $records_per_page = 10;
@@ -12,7 +12,7 @@ $search = isset($_GET['search']) ? $_GET['search'] : '';
 $searchLike = "%$search%";
 
 // Obter o número total de registros
-$sql = "SELECT COUNT(*) total FROM usuarios WHERE email LIKE ?";
+$sql = "SELECT COUNT(*) total FROM vendedores WHERE nome LIKE ?";
 $stmt = $conexao->prepare($sql);
 $stmt->bind_param("s", $searchLike);
 $stmt->execute();
@@ -43,7 +43,7 @@ if ($start_from < 0) {
 }
 
 // Obter os registros para a página atual
-$sql = "SELECT * FROM usuarios WHERE email LIKE ? LIMIT ?, ?";
+$sql = "SELECT * FROM vendedores WHERE nome LIKE ? LIMIT ?, ?";
 $stmt = $conexao->prepare($sql);
 $stmt->bind_param("sii", $searchLike, $start_from, $records_per_page);
 $stmt->execute();
@@ -71,18 +71,18 @@ $resultado = $stmt->get_result();
     <nav>
         <ul>
             <li><a href="index.php">Principal</a></li>
-            <li><a class="link-active" href="usuarios_index.php">Usuários</a></li>
+            <li><a class="link-active" href="vendedores_index.php">Usuários</a></li>
             <li><a href="produtos_index.php">Produtos</a></li>
             <li><a href="vendedores_index.php">Vendedores</a></li>
         </ul>
     </nav>
     <main>
         <h1>Cadastro de Usuários</h1>
-        <a href="usuarios_create.php" class="link-add">Adicionar Usuário</a>
+        <a href="vendedores_create.php" class="link-add">Adicionar Usuário</a>
 
-        <form method="GET" action="usuarios_index.php">
+        <form method="GET" action="vendedores_index.php">
             <div class="campos">
-                <input type="text" name="search" value="<?php echo htmlspecialchars($search); ?>" placeholder="Pesquisar por email">
+                <input type="text" name="search" value="<?php echo htmlspecialchars($search); ?>" placeholder="Pesquisar por nome">
                 <button type="submit">Pesquisar</button>
             </div>
         </form>
@@ -91,17 +91,17 @@ $resultado = $stmt->get_result();
             <tr>
                 <th>Ações</th>
                 <th>ID</th>
-                <th>Email</th>
-                <th>Administrador</th>
+                <th>nome</th>
+                <th>Ativo</th>
             </tr>
             <?php while($row = $resultado->fetch_assoc()): ?>
                 <tr>
                     <td>
-                        <a href="usuarios_update.php?id=<?php echo $row['id']; ?>">Editar</a> | 
-                        <a href="usuarios_delete.php?id=<?php echo $row['id']; ?>" onclick="confirmarExclusao(event)">Excluir</a>
+                        <a href="vendedores_update.php?id=<?php echo $row['id']; ?>">Editar</a> | 
+                        <a href="vendedores_delete.php?id=<?php echo $row['id']; ?>" onclick="confirmarExclusao(event)">Excluir</a>
                     </td>
                     <td><?php echo $row['id']; ?></td>
-                    <td><?php echo $row['email']; ?></td>
+                    <td><?php echo $row['nome']; ?></td>
                     <td class="align-center">
                         <?php echo $row['administrador'] ? 'Sim' : 'Não'; ?>
                     </td>
@@ -112,15 +112,15 @@ $resultado = $stmt->get_result();
         <!-- Paginação -->
         <div class="pagination">
             <?php if($current_page > 1): ?>
-                <a href="usuarios_index.php?page=<?php echo $current_page - 1; ?>">Anterior</a>
+                <a href="vendedores_index.php?page=<?php echo $current_page - 1; ?>">Anterior</a>
             <?php endif; ?>
 
             <?php for($i = 1; $i <= $total_pages; $i++): ?>
-                <a href="usuarios_index.php?page=<?php echo $i; ?>" <?php if($i == $current_page) echo 'class="active"'; ?>><?php echo $i; ?></a>
+                <a href="vendedores_index.php?page=<?php echo $i; ?>" <?php if($i == $current_page) echo 'class="active"'; ?>><?php echo $i; ?></a>
             <?php endfor; ?>
 
             <?php if($current_page < $total_pages): ?>
-                <a href="usuarios_index.php?page=<?php echo $current_page + 1; ?>">Próximo</a>
+                <a href="vendedores_index.php?page=<?php echo $current_page + 1; ?>">Próximo</a>
             <?php endif; ?>
         </div>
     </main>

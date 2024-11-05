@@ -25,6 +25,7 @@ $usuario = $_SESSION['email'];
             <li><a class="link-active" href="index.php">Principal</a></li>
             <li><a href="usuarios_index.php">Usuários</a></li>
             <li><a href="produtos_index.php">Produtos</a></li>
+            <li><a href="vendedores_index.php">Vendedores</a></li>
         </ul>
     </nav>
     <main>
