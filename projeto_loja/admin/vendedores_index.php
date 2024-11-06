@@ -2,7 +2,7 @@
 include 'protecao.php';
 include 'conexao.php';
 
-$usuario = $_SESSION['nome'];
+//$usuario = $_SESSION['nome'];
 
 // Definir o número de registros por página
 $records_per_page = 10;
@@ -71,14 +71,14 @@ $resultado = $stmt->get_result();
     <nav>
         <ul>
             <li><a href="index.php">Principal</a></li>
-            <li><a class="link-active" href="vendedores_index.php">Usuários</a></li>
+            <li><a  href="usuarios_index.php">Usuários</a></li>
             <li><a href="produtos_index.php">Produtos</a></li>
-            <li><a href="vendedores_index.php">Vendedores</a></li>
+            <li><a class="link-active" href="vendedores_index.php">Vendedores</a></li>
         </ul>
     </nav>
     <main>
-        <h1>Cadastro de Usuários</h1>
-        <a href="vendedores_create.php" class="link-add">Adicionar Usuário</a>
+        <h1>Cadastro de Vendedores</h1>
+        <a href="vendedores_create.php" class="link-add">Adicionar Vendedor</a>
 
         <form method="GET" action="vendedores_index.php">
             <div class="campos">
@@ -89,7 +89,7 @@ $resultado = $stmt->get_result();
 
         <table>
             <tr>
-                <th>Ações</th>
+                <th>Acões</th>
                 <th>ID</th>
                 <th>nome</th>
                 <th>Ativo</th>
@@ -103,7 +103,7 @@ $resultado = $stmt->get_result();
                     <td><?php echo $row['id']; ?></td>
                     <td><?php echo $row['nome']; ?></td>
                     <td class="align-center">
-                        <?php echo $row['administrador'] ? 'Sim' : 'Não'; ?>
+                        <?php echo $row['ativo'] ? 'Sim' : 'Não'; ?>
                     </td>
                 </tr>
             <?php endwhile; ?>
